@@ -51,7 +51,14 @@ public class BowlingGameTest {
         assertEquals(90, evaluate(b, "9- 9- 9- 9- 9- 9- 9- 9- 9- 9-"));
         assertEquals(300, evaluate(b, "X X X X X X X X X X X X"));
         assertEquals(150, evaluate(b, "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5"));
+        assertEquals(248, evaluate(b, "9/ X X X 9/ X X X 9/ XXX"));
+        assertEquals(221, evaluate(b, "9/ X X X 9/ X X X 9/ 45"));
+        try {
+            b.addRoll(5);
+            fail("Game should be finished");
+        } catch (Exception ex) {
 
+        }
     }
 
     private int evaluate(BowlingGame bg, String s) {
@@ -69,7 +76,7 @@ public class BowlingGameTest {
             } else if (c == '-') {
                 result.add(0);
             } else if (c == '/') {
-                result.add(10 - result.getLast());
+                result.add(10 - result.get(result.size() - 1));
             } else if (c != ' ') {
                 result.add(c - '0');
             }

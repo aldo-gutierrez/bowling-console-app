@@ -120,10 +120,6 @@ public class BowlingGameImpl implements BowlingGame {
 
     @Override
     public int getCurrentScore() {
-        return calculateScore();
-    }
-
-    private int calculateScore() {
         int[] frameScores = new int[MAX_FRAMES];
         int[] bonusPoints = new int[MAX_FRAMES];
         for (int i = 0; i < MAX_FRAMES; i++) {
