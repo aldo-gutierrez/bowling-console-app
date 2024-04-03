@@ -1,6 +1,6 @@
 package com.adurolife;
 
-import com.adurolife.model.BowlingAppConsole;
+import com.adurolife.console.BowlingAppConsole;
 
 public class BowlingAppMain {
     public static void main(String[] args) {

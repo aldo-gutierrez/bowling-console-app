@@ -53,12 +53,17 @@ public class BowlingGameTest {
         assertEquals(150, evaluate(b, "5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5"));
         assertEquals(248, evaluate(b, "9/ X X X 9/ X X X 9/ XXX"));
         assertEquals(221, evaluate(b, "9/ X X X 9/ X X X 9/ 45"));
+        assertEquals(16, evaluate(b, "-- -- -- -- -- -- -- -- X 12"));
         try {
             b.addRoll(5);
             fail("Game should be finished");
         } catch (Exception ex) {
 
         }
+        assertEquals(11, evaluate(b, "-- -- -- -- -- -- -- -- -- X1"));
+        b.addRoll(1);
+        assertEquals(12, b.getCurrentScore());
+
     }
 
     private int evaluate(BowlingGame bg, String s) {

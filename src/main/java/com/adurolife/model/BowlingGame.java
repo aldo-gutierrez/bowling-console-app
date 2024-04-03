@@ -12,4 +12,6 @@ public interface BowlingGame {
 
     int getCurrentScore();
 
+    String getSmallDashboard();
+
 }

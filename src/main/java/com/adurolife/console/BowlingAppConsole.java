@@ -1,4 +1,7 @@
-package com.adurolife.model;
+package com.adurolife.console;
+
+import com.adurolife.model.BowlingGame;
+import com.adurolife.model.BowlingGameImpl;
 
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -7,23 +10,26 @@ public class BowlingAppConsole {
 
     public void printMenu() {
         PrintStream out = System.out;
-        out.println("1) Add Roll");
-        out.println("2) Get current Frame");
-        out.println("3) Get current Roll");
-        out.println("4) Get current Score");
-        out.println("5) Restart");
-        out.println("6) Quit");
+        out.println("1.-     Add Roll");
+        out.println("2.-     Get current Frame");
+        out.println("3.-     Get current Roll");
+        out.println("4.-     Get current Score");
+        out.println("5.-     Restart");
+        out.println("6.-     Quit");
+        out.println("ENTER.- Print this menu");
     }
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
         BowlingGame game = new BowlingGameImpl();
+        System.out.println(game.getSmallDashboard());
         printMenu();
         int lastRoll = 0;
         while (true) {
             System.out.println();
             String input = scanner.nextLine();
             if (input == null || input.trim().isEmpty()) {
+                System.out.println(game.getSmallDashboard());
                 printMenu();
                 continue;
             }
