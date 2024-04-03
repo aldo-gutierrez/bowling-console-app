@@ -18,7 +18,19 @@ ENTER.- Print this menu
 
 Steps for running:
 
-In Windows/Linux
+In Windows/Linux if you have Gradle 
+```
+gradle run
+```
+
+In Windows/Linux if you don't have Gradle
 ```
 gradlew run
 ```
+
+For generating a zip distribution
+```
+gradlew distZip
+```
+which generates the distribution file
+build\distributions\bowling-console-app-1.0-SNAPSHOT.zip

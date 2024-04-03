@@ -66,6 +66,7 @@ public class BowlingAppConsole {
                 }
                 try {
                     game.addRoll(roll);
+                    System.out.println("\n Roll "+ roll + " added");
                     lastRoll = roll;
                 } catch (Exception ex) {
                     System.err.println(" Error " + ex.getMessage() + " \n");
